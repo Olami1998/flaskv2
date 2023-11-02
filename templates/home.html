@@ -12,15 +12,20 @@
                 height: 360px;
                 width: 100%;
                 object-fit: cover;
+                margin-bottom: 16px;
             }
         </style>
     </head>
     <body>
-        <div class="container">
-            <h1 class="text-center mt-2 mb-4">{{company_name}} Carriers</h1>
-            <img class="img-fluid" id="banner" src="/static/banner.jpg"
+        {% include 'nav.html' %}
+        <img class="img-fluid" id="banner" src="/static/banner.jpg"
             height="320">
-            <h2 class="text-center mt-2 mb-2">About Lekan</h2>
+        <div class="container">
+            <h1 class="text-center mt-2 mb-4">
+                {{company_name}} Carriers
+            </h1>
+            <div class="row" style="margin-bottom: 16px;">
+                <div class="col-md-6">
             <p class="lead" >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Veritatis nemo hic quam dolor, minima alias id 
@@ -28,6 +33,11 @@
                 cupiditate omnis! Dolorum adipisci tenetur optio
                 provident.
             </p>
+                </div>
+                <div class="d-none d-md-block col-6">
+                <img src="/static/IMG_2557.jpeg" style="height: 320px; border-radius: 4px; " alt="">
+                </div>
+        </div>
             <h2 class="text-center mt-2 mb-4">Open Positions</h2>
             <p>
                 {% for job in jobs %}
@@ -36,8 +46,8 @@
             </p>
             <div class="text-center">
                 <button class="btn btn-primary btn-lg">Contact Us</button>
-                <p class="mt-4">Copyright 2023, Lekan</p>
             </div>
         </div>
+        {% include 'footer.html' %}
     </body>
 </html>
